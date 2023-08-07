@@ -1,0 +1,52 @@
+<h1>
+  {{title}}
+</h1>
+<form method="POST">
+  <fieldset>
+    <label for="course" class="col-2">
+      Course:
+    </label>
+    <select name="course" id="course">
+      {{#each courses}}
+        
+        {{createOption this.name ../assignment.course }}
+      {{/each}}
+    </select>
+  </fieldset>
+  <fieldset>
+    <label for="name" class="col-2" >
+      Name:
+    </label>
+    <input name="name" id="name" required value="{{dataset.name}}"/>
+  </fieldset>
+   <fieldset>
+    <label for="assignmentGrade" class="col-2" >
+      Grade:
+    </label>
+    <input name="assignmentGrade" id="assignmentGrade" required value="{{dataset.assignmentGrade}}"/>
+  </fieldset>
+  <fieldset>
+    <label for="dueDate" class="col-2">
+      Due Date:
+    </label>
+    <input name="dueDate" id="dueDate" required 
+      value="{{dataset.dueDate}}"
+      type="date" />
+  </fieldset>
+  
+  {{!-- Creating the options for the status --}}
+  <fieldset>
+    <label for="status" class="col-2">
+      Status:
+    </label>
+    <select name="status" id="status">
+      {{!-- To do is the default value --}}
+      {{createOption 'TO DO' ../assignment.status}}
+      {{createOption 'IN PROGRESS' ../assignment.status}}
+      {{createOption 'DONE' ../assignment.status}}
+    </select>
+  </fieldset>
+  <button class="offset-3 btn btn-primary">
+    Save
+  </button>
+</form>

@@ -1,0 +1,27 @@
+<h1>
+  {{title}}
+</h1>
+<form method="POST">
+  {{!-- In add section, adding fields to be filled to make changes to the data --}}
+  <fieldset>
+    <label for="name" class="col-2">
+      Name:
+    </label>
+    <input name="name" id="name" required />
+  </fieldset>
+  <fieldset>
+    <label for="startDate" class="col-2">
+      Start Date:
+    </label>
+    <input name="startDate" id="startDate" required type="date"/>
+  </fieldset>
+  <fieldset>
+    <label for="endDate" class="col-2">
+      End Date:
+    </label>
+    <input name="endDate" id="endDate"  required type="date"/>
+  </fieldset>
+  <button class="offset-3 btn btn-primary">
+    Save
+  </button>
+</form>

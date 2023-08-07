@@ -1,0 +1,20 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
+}
+
+a {
+  color: #00B7FF;
+}
+body div h1{
+  text-align: center;
+  text-decoration: underline;
+}
+.nav-item{
+  padding: 5%;
+}
+.nav-link{
+  font-style: italic;
+  color: darkgray;
+}

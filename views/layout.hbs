@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>{{title}}</title>
+    {{!-- Adding CSS file source --}}
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    {{!-- Adding bootstrap link here --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cyborg/bootstrap.min.css" 
+      integrity="sha384-nEnU7Ae+3lD52AK+RGNzgieBWMnEfgTbRHIwEvp1XXPdqdO6uLTd/NwXbzboqjc2"
+       crossorigin="anonymous"/>
+
+    {{!-- javascripts file source --}}
+    <script src="/javascripts/scripts.js"></script>
+  </head>
+  <body>
+    {{!-- Adding dark text theme --}}
+    <div class="mt-4 p-5 bg-dark text-white">
+      <h1>Task Manager</h1>
+    </div>
+    {{! color theme big dark}}
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-4">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/assignments">Assignments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/courses">Courses</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          {{#if user}}
+            {{! if user authenticated }}
+            <li class="nav-item">
+              <a class="nav-link" href="#">{{user.username}}</a>
+            </li>
+            <li class="nav-item">
+              {{!-- User logout button will appear --}}
+              <a class="nav-link" href="/Logout">Logout</a>
+            </li>
+          {{else}}
+          {{!-- If the user is new to it, he/she needs to register first --}}
+            <li class="nav-item">
+              <a class="nav-link" href="/Register">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Login">Login</a>
+            </li>
+          {{/if}}
+        </ul>
+      </div>
+    </nav>
+    {{{body}}}
+    <script
+    src = "https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cyborg/bootstrap.min.css", 
+    integrity="sha384-nEnU7Ae+3lD52AK+RGNzgieBWMnEfgTbRHIwEvp1XXPdqdO6uLTd/NwXbzboqjc2", 
+    crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
