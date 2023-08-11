@@ -4,7 +4,7 @@
 //API keys for authentication of google and github
 const configurations = {
     // key : value
-    "db": "mongodb+srv://Ravneeshadmin:Rkorsm0901@cluster1.rtcwxvg.mongodb.net/database",
+    "db": "mongodb+srv://Ravneeshadmin:123@cluster1.rtcwxvg.mongodb.net/database",
     "github": {
         "clientId": "a1a3d8aee0db7104664f",
         "clientSecret": "f75ebe9e030aafbd499d21a77eda352e85b41fc0",

@@ -13,10 +13,18 @@ function IsLoggedIn(req, res, next) {
   res.redirect("/login"); // not authenticated
 }
 
+
+
 async function getAssignments(){
   //allows us to use the **NOW** async find function in non async routing functions
   const assignments = await Assignment.find({});
   return assignments;
+}
+
+async function getCourses(){
+
+  const courses = await Course.find({})
+  return courses;
 }
 
 // Configure router object with request handlers
@@ -38,15 +46,19 @@ router.get("/", (req, res, next) => {
 
 // GET handler for add
 router.get("/add", IsLoggedIn, (req, res, next) => {
-  getAssignments()
-  .then(function(assignments){
-    res.render("assignments/add", {
-      title: "Task Manager",
-      dataset: assignments,
-      user: req.user
+
+  getCourses().then(function(courses){
+    getAssignments().then(function(assignments){
+      res.render("assignments/add", {
+        title: "Task Manager",
+        dataset: assignments,
+        user: req.user,
+        courses: courses
+      })
     })
-  }
-  )
+    }).catch(function(err){
+      console.log(err)
+    })
   .catch(function(err){
     console.log(err);
   })
